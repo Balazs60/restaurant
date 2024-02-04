@@ -2,7 +2,7 @@ package com.github.balazs60.restaurant.controller;
 
 import com.github.balazs60.restaurant.dto.OrderDto;
 import com.github.balazs60.restaurant.dto.OrderItemDto;
-import com.github.balazs60.restaurant.dto.OrderUpdateDto;
+import com.github.balazs60.restaurant.dto.OrderStatusDto;
 import com.github.balazs60.restaurant.model.Order;
 import com.github.balazs60.restaurant.model.OrderItem;
 import com.github.balazs60.restaurant.model.OrderStatus;
@@ -31,9 +31,9 @@ public class OrderController {
     }
 
     @PatchMapping("/{id}")
-    public void updateOrderStatus(@RequestBody OrderUpdateDto orderUpdateDto) {
-        UUID orderId = UUID.fromString(orderUpdateDto.getOrderId());
-        OrderStatus newStatus = OrderStatus.valueOf(orderUpdateDto.getNewStatus());
+    public void updateOrderStatus(@PathVariable String id, @RequestBody OrderStatusDto orderStatusDto) {
+        UUID orderId = UUID.fromString(id);
+        OrderStatus newStatus = OrderStatus.valueOf(orderStatusDto.getOrderStatus());
         orderService.updateOrderStatus(orderId, newStatus);
     }
 
@@ -53,5 +53,9 @@ public class OrderController {
             orderItemList.add(orderItem);
         }
         orderService.addOrder(orderDto.getCustomerId(), orderDto.getRestaurantId(), orderItemList);
+    }
+    @GetMapping("/{id}")
+    public Order getOrderById(@PathVariable String id) {
+        return orderService.getOrderById(UUID.fromString(id));
     }
 }
