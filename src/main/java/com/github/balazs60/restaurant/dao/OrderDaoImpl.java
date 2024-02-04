@@ -23,12 +23,18 @@ public class OrderDaoImpl implements OrderDao {
     @Override
     public void addOrder(UUID customerId, UUID restaurantId, List<OrderItem> orderItems) {
         Order order = new Order();
-        order.setOrderItems(orderItems);
+        //order.setOrderItems(orderItems);
         order.setOrderStatus(OrderStatus.RECEIVED);
         order.setCustomerId(customerId);
         order.setRestaurantId(restaurantId);
         orderRepository.save(order);
+        System.out.println("orderid" + order.getId());
 
+        for(OrderItem orderItem : orderItems){
+            orderItem.setOrder(order);
+        }
+        order.setOrderItems(orderItems);
+        orderRepository.save(order);
     }
 
     @Override

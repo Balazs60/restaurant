@@ -17,7 +17,7 @@ public class Restaurant {
     @GeneratedValue
     private UUID id;
     private String name;
-    @OneToMany
+    @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL)
     private List<Item> menu;
 
 }

@@ -1,0 +1,13 @@
+{
+  "customerId" : "880e8400-e29b-41d4-a716-446655440000",
+  "restaurantId" : "350e8400-e29b-41d4-a716-446655440000",
+  "orderItemList": [
+    {"quantity": 2,
+      "itemId" : "450e8400-e29b-41d4-a716-446655440000",
+      "instructions" : "Legyen finom"},
+    {"quantity": 4,
+      "itemId" : "550e8400-e29b-41d4-a716-446655440000",
+      "instructions" : "Legyen nagyon finom"}
+  ]
+
+}

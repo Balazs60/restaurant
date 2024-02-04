@@ -1,0 +1,13 @@
+INSERT INTO Restaurant (id, name)
+VALUES
+    ('150e8400-e29b-41d4-a716-446655440000'::uuid, 'Taco Place'),
+    ('250e8400-e29b-41d4-a716-446655440000'::uuid, 'Pizza Place'),
+    ('350e8400-e29b-41d4-a716-446655440000'::uuid, 'McDonalds');
+
+
+INSERT INTO Item (id, restaurant_id, name, description, price)
+VALUES
+    ('450e8400-e29b-41d4-a716-446655440000'::uuid, '350e8400-e29b-41d4-a716-446655440000'::uuid, 'Hamburger', 'Description for Hamburger', 10),
+    ('550e8400-e29b-41d4-a716-446655440000'::uuid,'350e8400-e29b-41d4-a716-446655440000'::uuid, 'Potato', 'Description for Pizza', 15),
+    ('650e8400-e29b-41d4-a716-446655440000'::uuid,'150e8400-e29b-41d4-a716-446655440000'::uuid, 'Taco', 'Description for Item3', 20)
+    ;
