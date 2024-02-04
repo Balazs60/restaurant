@@ -1,45 +1,52 @@
-
 # restaurant
 
 ## Getting Started
 
 ### Prerequisites
 
-Java JDK
-Maven (optional, Maven wrapper included)
+* Java JDK
+* Maven (optional, Maven wrapper included)
 
 ### Installation
 
-#### Clone the repository:
+#### Clone the repository
+
+```
 git clone https://github.com/Balazs60/restaurant
+```
 
-#### Compile the application:
+#### Compile the application
 
+```
 ./mvnw clean package
+```
 
 #### Create postgres database
 
-Name: restaurant  
-User: postgres  
+* Name: restaurant
+* User: postgres
 
 #### Set environment variables
 
-export DB_HOST=localhost  
+```
+export DB_HOST=localhost
 export DB_NAME=restaurant  
 export DB_PASSWORD=...
 export DB_PORT=5432
 export DB_USER=postgres
+```
 
+#### Run the compiled program
 
-#### Run the compiled program:
-
+```
 java -jar target/restaurant-1.0.0-SNAPSHOT.jar  
+```
 
 ## Smoke test  
 
 Run the queries in test-data.sql in postgresql.
 
-Run the following Http request:
+Run the following HTTP request:
 
 ```
 GET http://localhost:8080/api/restaurants/
@@ -89,4 +96,3 @@ Example response:
   }
 ]
 ```
-
