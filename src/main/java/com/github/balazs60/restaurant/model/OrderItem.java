@@ -20,7 +20,7 @@ public class OrderItem {
     @ManyToOne
     @JoinColumn(name = "order_id", nullable = false)
     private Order order;
-
+    private int quantity;
     private UUID itemId;
     private String instructions;
 }
