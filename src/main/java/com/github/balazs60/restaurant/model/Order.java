@@ -11,7 +11,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Getter
 @Setter
-@Table(name = "order")
+@Table(name = "\"order\"")
 public class Order {
     @Id
     @GeneratedValue
@@ -19,6 +19,6 @@ public class Order {
     private UUID customerId;
     private UUID restaurantId;
     private OrderStatus orderStatus;
-    @OneToMany(mappedBy = "member")
-    private List<Item> items;
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    private List<OrderItem> orderItems;
 }
