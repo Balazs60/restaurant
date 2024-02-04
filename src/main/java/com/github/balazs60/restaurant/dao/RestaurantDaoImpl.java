@@ -23,7 +23,7 @@ private RestaurantRepository restaurantRepository;
     }
 
     @Override
-    public List<Restaurant> getAllRestaurant() {
+    public List<Restaurant> getAllRestaurants() {
         return restaurantRepository.findAll();
     }
 

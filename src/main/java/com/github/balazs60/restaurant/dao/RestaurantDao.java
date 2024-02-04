@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.UUID;
 
 public interface RestaurantDao {
-    public List<Restaurant> getAllRestaurant();
+    public List<Restaurant> getAllRestaurants();
 
     public Restaurant getRestaurantById(UUID restaurantId);
 
