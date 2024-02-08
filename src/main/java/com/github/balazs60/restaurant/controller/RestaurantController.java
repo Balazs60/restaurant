@@ -1,5 +1,6 @@
 package com.github.balazs60.restaurant.controller;
 
+import com.github.balazs60.restaurant.dto.RestaurantDto;
 import com.github.balazs60.restaurant.model.Item;
 import com.github.balazs60.restaurant.model.Restaurant;
 import com.github.balazs60.restaurant.service.RestaurantService;
@@ -24,8 +25,15 @@ public class RestaurantController {
     }
 
     @GetMapping("/")
-    public List<Restaurant> getAllRestaurants() {
-        return restaurantService.getAllRestaurants();
+    public List<RestaurantDto> getAllRestaurants() {
+        List<RestaurantDto> restaurants = restaurantService.getAllRestaurants().
+                stream()
+                .map(restaurant -> new RestaurantDto(
+                        restaurant.getId(),
+                        restaurant.getName()
+                )).toList();
+
+        return restaurants;
     }
 
     @GetMapping("/{id}")

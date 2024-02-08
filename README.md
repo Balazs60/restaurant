@@ -58,41 +58,15 @@ Example response:
 [
   {
     "id": "150e8400-e29b-41d4-a716-446655440000",
-    "name": "Taco Place",
-    "menu": [
-      {
-        "id": "650e8400-e29b-41d4-a716-446655440000",
-        "name": "Taco",
-        "description": "Description for Item3",
-        "price": 20,
-        "restaurant": "150e8400-e29b-41d4-a716-446655440000"
-      }
-    ]
+    "name": "Taco Place"
   },
   {
     "id": "250e8400-e29b-41d4-a716-446655440000",
-    "name": "Pizza Place",
-    "menu": []
+    "name": "Pizza Place"
   },
   {
     "id": "350e8400-e29b-41d4-a716-446655440000",
-    "name": "McDonalds",
-    "menu": [
-      {
-        "id": "450e8400-e29b-41d4-a716-446655440000",
-        "name": "Hamburger",
-        "description": "Description for Hamburger",
-        "price": 10,
-        "restaurant": "350e8400-e29b-41d4-a716-446655440000"
-      },
-      {
-        "id": "550e8400-e29b-41d4-a716-446655440000",
-        "name": "Potato",
-        "description": "Description for Pizza",
-        "price": 15,
-        "restaurant": "350e8400-e29b-41d4-a716-446655440000"
-      }
-    ]
+    "name": "McDonalds"
   }
 ]
 ```

@@ -39,21 +39,19 @@ public class OrderController {
 
     @PostMapping("/")
     public void addNewOrder(@RequestBody OrderDto orderDto) {
-        List<OrderItem> orderItemList = new ArrayList<>();
+        List<OrderItem> orderItemList = orderDto.getOrderItemList()
+                .stream()
+                .map(orderItemDto -> new OrderItem(
+                        null,
+                        null,
+                        orderItemDto.getQuantity(),
+                        orderItemDto.getItemId(),
+                        orderItemDto.getInstructions()
+                )).toList();
 
-        for (OrderItemDto orderItemDto : orderDto.getOrderItemList()) {
-
-            OrderItem orderItem = new OrderItem(
-                  null,
-                    null,
-                    orderItemDto.getQuantity(),
-                    orderItemDto.getItemId(),
-                    orderItemDto.getInstructions()
-                    );
-            orderItemList.add(orderItem);
-        }
         orderService.addOrder(orderDto.getCustomerId(), orderDto.getRestaurantId(), orderItemList);
     }
+
     @GetMapping("/{id}")
     public Order getOrderById(@PathVariable String id) {
         return orderService.getOrderById(UUID.fromString(id));
